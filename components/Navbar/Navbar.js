@@ -25,16 +25,16 @@ const [showMe, setShowMe] = useState(false);
         </Link>
         <ul className={styles.links}>
           <li className={styles.navlink}>
-            <Link href="/">Enrollment</Link>
+            <Link href="https://enrollment.vercel.app/" passHref={true}>Enrollment</Link>
           </li>
           <li className={styles.navlink}>
-            <Link href="/">Learning</Link>
+            <Link href="https://outboxlms-on5ay2890-lms.vercel.app/" passHref={true}>Learning</Link>
           </li>
           <li className={`${styles.navlink} ${styles.active}`}>
-            <Link href="/">Linkages</Link>
+            <Link href="https://outboxlinkages.vercel.app/" passHref={true}>Linkages</Link>
           </li>
           <li className={styles.navlink}>
-            <Link href="/">Events</Link>
+            <Link href="https://events-eduplatform.vercel.app/"passHref={true}>Events</Link>
           </li>
         </ul> 
           

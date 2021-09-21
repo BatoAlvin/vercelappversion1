@@ -2,6 +2,8 @@ import DashboardIcon from '@material-ui/icons/Dashboard';
 import PeopleIcon from '@material-ui/icons/People';
 import slack from "../../public/slack.png";
 import Image from "next/image";
+import WorkIcon from '@material-ui/icons/Work';
+import MultilineChartIcon from '@material-ui/icons/MultilineChart';
 
 // export const admin = [
 //     {
@@ -21,8 +23,18 @@ import Image from "next/image";
 export const lms = [
     {
         list: "My Class",
-        link:"/myClass/classwork",
+        link:"/",
         icon: <PeopleIcon style = {{fill: '#41AD48'}}/>
+    },
+    {
+        list: "Add Work",
+        link:"/work",
+        icon: <WorkIcon style = {{fill: '#41AD48'}}/>
+    },
+    {
+        list: "Overview",
+        link:"/workoverview",
+        icon: <MultilineChartIcon style = {{fill: '#41AD48'}}/>
     },
     {
         list: "Slack",

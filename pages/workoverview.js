@@ -7,18 +7,18 @@ import {db} from '../firebase/firebase'
 import { collection,  getDocs } from "firebase/firestore";
 
 //to view the projects added by admin
-const Classwork = ({data}) => {
+const Workoverview = ({data}) => {
   return(
     <>
      <Head>
-        <title>EDU MY CLASS|CLASSWORK</title>
+        <title>EDU MY WORK OVERVIEW</title>
         <meta name="description" content="Become a software developer" />
       </Head>
            <div className={styles.myClassSection}>
         <div className={styles.myClassBorder}>
           <div className={styles.myClassHeader}>
            <Link href="/myClass/classwork">
-               <a className={styles.myClassActive}>ClassWork</a>
+               <a className={styles.myClassActive}>Work Overview</a>
              </Link>
         </div>
  
@@ -28,9 +28,10 @@ const Classwork = ({data}) => {
             
     <div key = {info.id} >
     <Link href = '/myClass/project/[id]' as = {`/myClass/project/${info.id}`} passHref>
-     <div>Title: {info.title}</div>
+     <div></div>
      </Link>
-     <div>Due Date: {info.date}</div>
+     <div>Project Title: {info.title}</div>
+     <div>Github Link: {info.github}</div>
    </div>
    
     ))}
@@ -45,12 +46,12 @@ const Classwork = ({data}) => {
   
 };
 
-export default Classwork;
+export default Workoverview;
 
 export const getStaticProps = async () => {
   const data = []
   try{
-      const projects = await getDocs(collection(db, "lms_projects"));      
+      const projects = await getDocs(collection(db, "lms_work"));      
       projects.forEach((doc) => {
          data.push(Object.assign({
              id: doc.id

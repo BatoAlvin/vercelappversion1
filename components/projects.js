@@ -1,12 +1,14 @@
-import styles from "../../styles/myClass.module.css";
+//import styles from "../../styles/myClass.module.css";
+import styles from "../styles/myClass.module.css";
 import Head from "next/head";
 import Link from 'next/link'
 import { useState } from "react";
 
-import {db} from '../../firebase/firebase'
+//import {db} from '../../firebase/firebase'
+import {db} from '../firebase/firebase'
 import { collection,  getDocs } from "firebase/firestore";
 
-const Classwork = ({data}) => {
+const Projects = ({data}) => {
   return(
     <>
      <Head>
@@ -29,7 +31,7 @@ const Classwork = ({data}) => {
     <Link href = '/myClass/project/[id]' as = {`/myClass/project/${info.id}`} passHref>
      <div>{info.title}</div>
      </Link>
-     <div>Due Date : {info.date}</div>
+     <div> {info.github}</div>
    </div>
    
     ))}
@@ -44,7 +46,7 @@ const Classwork = ({data}) => {
   
 };
 
-export default Classwork;
+export default Projects;
 
 export const getStaticProps = async () => {
   const data = []
